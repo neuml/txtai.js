@@ -1,7 +1,8 @@
 {
     "name": "txtai-node",
     "dependencies": {
-        "sprintf-js": ">=1.1.2"
+        "sprintf-js": ">=1.1.2",
+        "txtai": ">=1.0.0"
     },
     "devDependencies": {
         "@babel/cli": ">=7.10.5",
