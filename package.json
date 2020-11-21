@@ -1,0 +1,25 @@
+{
+    "name": "txtai",
+    "version": "1.0.0",
+    "author": "NeuML",
+    "description": "Javascript bindings for txtai, an AI-powered search engine",
+    "license": "Apache-2.0",
+    "keywords": [],
+    "repository": "neuml/txtai.js",
+    "main": "dist/index.js",
+    "files": ["dist"],
+    "dependencies": {
+        "core-js": ">=3.6.5",
+        "isomorphic-fetch": ">=2.2.1"
+    },
+    "devDependencies": {
+        "@babel/cli": ">=7.10.5",
+        "@babel/core": ">=7.10.5",
+        "@babel/node": ">=7.10.5",
+        "@babel/plugin-transform-runtime": ">=7.10.5",
+        "@babel/preset-env": ">=7.10.5"
+    },
+    "scripts": {
+        "build": "node_modules/@babel/cli/bin/babel.js src -d dist -s --verbose"
+    }
+}

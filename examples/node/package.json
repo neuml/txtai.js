@@ -1,0 +1,16 @@
+{
+    "name": "txtai-node",
+    "dependencies": {
+        "sprintf-js": ">=1.1.2"
+    },
+    "devDependencies": {
+        "@babel/cli": ">=7.10.5",
+        "@babel/core": ">=7.10.5",
+        "@babel/node": ">=7.10.5",
+        "@babel/plugin-transform-runtime": ">=7.10.5",
+        "@babel/preset-env": ">=7.10.5"
+    },
+    "scripts": {
+        "build": "node_modules/@babel/cli/bin/babel.js src -d dist -s --verbose"
+    }
+}
