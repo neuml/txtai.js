@@ -1,5 +1,10 @@
 # txtai: AI-powered search engine for JavaScript
 
+[![Version](https://img.shields.io/github/release/neuml/txtai.js.svg?style=flat&color=success)](https://github.com/neuml/txtai.js/releases)
+[![GitHub Release Date](https://img.shields.io/github/release-date/neuml/txtai.js.svg?style=flat&color=blue)](https://github.com/neuml/txtai.js/releases)
+[![GitHub issues](https://img.shields.io/github/issues/neuml/txtai.js.svg?style=flat&color=success)](https://github.com/neuml/txtai.js/issues)
+[![GitHub last commit](https://img.shields.io/github/last-commit/neuml/txtai.js.svg?style=flat&color=blue)](https://github.com/neuml/txtai.js)
+
 [txtai](https://github.com/neuml/txtai) builds an AI-powered index over sections of text. txtai supports building text indices to perform similarity searches and create extractive question-answering based systems. txtai also has functionality for zero-shot classification.
 
 This repository contains JavaScript bindings for the txtai API. Full txtai functionality is supported.
