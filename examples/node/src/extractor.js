@@ -38,7 +38,7 @@ const run = async () => {
         let question = "What hockey team won?";
         
         console.log("----" + question + "----");
-        console.log(await extractor.extract(sections, [{name: question, query: question, question: question, snippet: true}]));
+        console.log(await extractor.extract(sections, [{name: question, query: question, question: question, snippet: false}]));
     }
     catch (e) {
         console.trace(e);

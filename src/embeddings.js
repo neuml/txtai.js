@@ -38,7 +38,7 @@ class Embeddings extends API {
     }
 
     /**
-     * Calculates the similarity between text1 and list of elements in text2.
+     * Calculates the similarity between search and list of elements in data.
      * 
      * @param search text
      * @param data list of text to compare against
