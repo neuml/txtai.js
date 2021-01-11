@@ -5,14 +5,14 @@ import API from "./api";
  */
 class Extractor extends API {
     /**
-     * Extracts answers to input questions
+     * Extracts answers to input questions.
      * 
-     * @param documents list of {id: value, text: value}
      * @param queue list of {name: value, query: value, question: value, snippet: value)
-     * @return extracted answers
+     * @param texts list of text
+     * @return list of (name, answer)
      */
-    async extract(documents, queue) {
-        return await this.post("extract", {documents: documents, queue: queue}).catch (e => {
+    async extract(queue, texts) {
+        return await this.post("extract", {queue: queue, texts: texts}).catch (e => {
             throw(e);
         });
     }

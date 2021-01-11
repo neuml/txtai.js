@@ -1,6 +1,6 @@
 {
     "name": "txtai",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "author": "NeuML",
     "description": "Javascript bindings for txtai, an AI-powered search engine",
     "license": "Apache-2.0",
