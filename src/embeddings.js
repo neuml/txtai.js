@@ -96,7 +96,7 @@ class Embeddings extends API {
     }
 
     /**
-     * Transforms list of text into an embeddings arrays.
+     * Transforms list of text into embeddings arrays.
      *
      * @param texts list of text
      * @return embeddings array
