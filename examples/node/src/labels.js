@@ -31,7 +31,7 @@ const run = async () => {
 
         for (let text of data) {
             let label = await labels.label(text, tags);
-            label = tags[label[0][0]];
+            label = tags[label[0].id];
 
             console.log(sprintf("%-75s %s", text, label));
         }
@@ -44,7 +44,7 @@ const run = async () => {
 
         for (let text of data) {
             let label = await labels.label(text, tags);
-            label = tags[label[0][0]];
+            label = tags[label[0].id];
 
             console.log(sprintf("%-75s %s", text, label));
         }

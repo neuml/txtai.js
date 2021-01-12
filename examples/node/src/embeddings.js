@@ -23,7 +23,7 @@ const run = async () => {
 
         for (let query of ["feel good story", "climate change", "health", "war", "wildlife", "asia", "north america", "dishonest junk"]) {
             let results = await embeddings.similarity(query, data);
-            let uid = results[0][0];
+            let uid = results[0].id;
             console.log(sprintf("%-20s %s", query, data[uid]))
         }
 
@@ -39,7 +39,7 @@ const run = async () => {
 
         for (let query of ["feel good story", "climate change", "health", "war", "wildlife", "asia", "north america", "dishonest junk"]) {
             let results = await embeddings.search(query, 1);
-            let uid = results[0][0];
+            let uid = results[0].id;
             console.log(sprintf("%-20s %s", query, data[uid]))
         }
     }

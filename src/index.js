@@ -6,5 +6,6 @@ import Similarity from "./similarity";
 export {
     Embeddings,
     Extractor,
-    Labels
+    Labels,
+    Similarity
 };

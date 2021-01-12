@@ -6,12 +6,12 @@ import API from "./api";
 class Embeddings extends API {
     /**
      * Finds documents in the embeddings model most similar to the input query. Returns
-     * a list of (id, score) sorted by highest score, where id is the document id in
-     * the embeddings model.
+     * a list of {id: value, score: value} sorted by highest score, where id is the
+     * document id in the embeddings model.
      * 
      * @param query query text
      * @param limit maximum results (defaults to 10)
-     * @return list of (id, score)
+     * @return list of {id: value, score: value}
      */
     async search(query, limit = 10) {
         return await this.get("search", {query: query, limit: limit}).catch(e => {
@@ -21,12 +21,12 @@ class Embeddings extends API {
 
     /**
      * Finds documents in the embeddings model most similar to the input queries. Returns
-     * a list of (id, score) sorted by highest score per query, where id is the document id
-     * in the embeddings model.
+     * a list of {id: value, score: value} sorted by highest score per query, where id is
+     * the document id in the embeddings model.
      *
      * @param queries queries text
      * @param limit maximum results (defaults to 10)
-     * @return list of (id, score) per query
+     * @return list of {id: value, score: value} per query
      */
     async batchsearch(queries, limit = 10) {
         return await this.post("batchsearch", {queries: queries, limit: limit}).catch (e => {
@@ -57,11 +57,12 @@ class Embeddings extends API {
 
     /**
      * Computes the similarity between query and list of text. Returns a list of
-     * (id, score) sorted by highest score, where id is the index in texts.
+     * {id: value, score: value} sorted by highest score, where id is the index
+     * in texts.
      *
      * @param query query text
      * @param texts list of text
-     * @return list of (id, score)
+     * @return list of {id: value, score: value}
      */
     async similarity(query, texts) {
         return await this.post("similarity", {query: query, texts: texts}).catch (e => {
@@ -71,11 +72,12 @@ class Embeddings extends API {
 
     /**
      * Computes the similarity between list of queries and list of text. Returns a list
-     * of (id, score) sorted by highest score per query, where id is the index in texts.
+     * of {id: value, score: value} sorted by highest score per query, where id is the
+     * index in texts.
      * 
      * @param queries queries text
      * @param texts list of text
-     * @return list of (id, score) per query
+     * @return list of {id: value, score: value} per query
      */
     async batchsimilarity(queries, texts) {
         return await this.post("batchsimilarity", {queries: queries, texts: texts}).catch (e => {
@@ -89,8 +91,8 @@ class Embeddings extends API {
      * @param text input text
      * @return embeddings array
      */
-    async embeddings(text) {
-        return await this.get("embeddings", {text: text}).catch(e => {
+    async transform(text) {
+        return await this.get("transform", {text: text}).catch(e => {
             throw(e);
         });
     }
@@ -101,8 +103,8 @@ class Embeddings extends API {
      * @param texts list of text
      * @return embeddings array
      */
-    async batchembeddings(texts) {
-        return await this.post("batchembeddings", texts).catch(e => {
+    async batchtransform(texts) {
+        return await this.post("batchtransform", texts).catch(e => {
             throw(e);
         });
     }
