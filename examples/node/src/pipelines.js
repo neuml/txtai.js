@@ -1,7 +1,9 @@
 import {Segmentation, Textractor, Summary, Transcription, Translation, Workflows} from "txtai";
 
 /**
- * Example pipeline and workflow functionality
+ * Example pipeline and workflow functionality.
+ *
+ * Uses files from txtai unit tests: https://github.com/neuml/txtai/releases/download/v2.0.0/tests.tar.gz
  */
 const run = async () => {
     try {
