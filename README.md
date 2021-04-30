@@ -22,6 +22,7 @@ The examples directory has a series of examples that give an overview of txtai. 
 | [Introducing txtai](https://github.com/neuml/txtai.js/blob/master/examples/node/src/embeddings.js) | Overview of the functionality provided by txtai |
 | [Extractive QA with txtai](https://github.com/neuml/txtai.js/blob/master/examples/node/src/extractor.js) | Extractive question-answering with txtai |
 | [Labeling with zero-shot classification](https://github.com/neuml/txtai.js/blob/master/examples/node/src/labels.js) | Labeling with zero-shot classification |
+| [Pipelines and workflows](https://github.com/neuml/txtai.js/blob/master/examples/node/src/pipelines.js) | Pipelines and workflows |
 
 txtai.js connects to a txtai api instance. See [this link](https://github.com/neuml/txtai#api) for details on how to start a new api instance.
 
@@ -35,4 +36,5 @@ npm run build
 node dist/embeddings.js
 node dist/extractor.js
 node dist/labels.js
+node dist/pipelines.js
 ```
