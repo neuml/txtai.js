@@ -1,4 +1,4 @@
-import {Segmentation, Textractor, Summary, Transcription, Translation, Workflows} from "txtai";
+import {Segmentation, Textractor, Summary, Transcription, Translation, Workflow} from "txtai";
 
 /**
  * Example pipeline and workflow functionality.
@@ -34,7 +34,7 @@ const run = async () => {
         console.log("\n---- Summary Text in Spanish ----");
         console.log(translation);
 
-        let workflow = new Workflows(service);
+        let workflow = new Workflow(service);
         let output = await workflow.workflow("sumspanish", [text]);
 
         console.log("\n---- Workflow [Extract Text->Summarize->Translate] ----");

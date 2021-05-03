@@ -1,9 +1,9 @@
 import API from "./api";
 
 /**
- * txtai workflows instance. 
+ * txtai workflow instance. 
  */
-class Workflows extends API {
+class Workflow extends API {
     /**
      * Executes a named workflow using elements as input.
      *
@@ -18,4 +18,4 @@ class Workflows extends API {
     }
 }
 
-export default Workflows;
+export default Workflow;
