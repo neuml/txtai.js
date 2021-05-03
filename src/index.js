@@ -7,7 +7,7 @@ import Summary from "./summary";
 import Textractor from "./textractor";
 import Transcription from "./transcription";
 import Translation from "./translation";
-import Workflows from "./workflows";
+import Workflow from "./workflow";
 
 export {
     Embeddings,
@@ -19,5 +19,5 @@ export {
     Textractor,
     Transcription,
     Translation,
-    Workflows
+    Workflow
 };
