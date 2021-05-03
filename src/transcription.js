@@ -22,7 +22,7 @@ class Transcription extends API {
      * @param files list of files to transcribe
      * @return list of transcribed text
      */
-    async batchtextract(files) {
+    async batchtranscribe(files) {
         return await this.post("batchtranscribe", files).catch (e => {
             throw(e);
         });
