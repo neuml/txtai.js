@@ -35,7 +35,7 @@ const run = async () => {
         console.log(translation);
 
         let workflow = new Workflow(service);
-        let output = await workflow.workflow("sumspanish", [text]);
+        let output = await workflow.workflow("sumspanish", ["file:///tmp/txtai/article.pdf"]);
 
         console.log("\n---- Workflow [Extract Text->Summarize->Translate] ----");
         console.log(output);
