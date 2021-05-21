@@ -46,11 +46,42 @@ class Embeddings extends API {
     }
 
     /**
-     * Builds an embeddings index for previously batched documents. No further documents can be added
-     * after this call.
+     * Builds an embeddings index for previously batched documents.
      */
     async index() {
         await this.get("index", null).catch(e => {
+            throw(e);
+        });
+    }
+
+    /**
+     * Runs an embeddings upsert operation for previously batched documents.
+     */
+    async upsert() {
+        await this.get("upsert", null).catch(e => {
+            throw(e);
+        });
+    }
+
+    /**
+     * Deletes from an embeddings index. Returns list of ids deleted.
+     *
+     * @param ids list of ids to delete
+     * @return ids deleted
+     */
+    async delete(ids) {
+        return await this.post("delete", ids).catch(e => {
+            throw(e);
+        });
+    }
+
+    /**
+     * Total number of elements in this embeddings index.
+     *
+     * @return number of elements in embeddings index
+     */
+    async count() {
+        return await this.get("count", null).catch(e => {
             throw(e);
         });
     }

@@ -40,8 +40,28 @@ const run = async () => {
         for (let query of ["feel good story", "climate change", "health", "war", "wildlife", "asia", "north america", "dishonest junk"]) {
             let results = await embeddings.search(query, 1);
             let uid = results[0].id;
-            console.log(sprintf("%-20s %s", query, data[uid]))
+            console.log(sprintf("%-20s %s", query, data[uid]));
         }
+
+        data[0] = "Feel good story: baby panda born"
+
+        await embeddings.delete([5]);
+        await embeddings.add([{id: 0, text: data[0]}])
+        await embeddings.upsert();
+
+        console.log();
+        console.log("Test delete/upsert/count");
+        console.log(sprintf("%-20s %s", "Query", "Best Match"));
+        console.log("-".repeat(50));
+
+        let query = "feel good story";
+        let results = await embeddings.search(query, 1);
+        let uid = results[0].id;
+        console.log(sprintf("%-20s %s", query, data[uid]));
+
+        let count = await embeddings.count();
+        console.log();
+        console.log(sprintf("Total Count: %d", count));
     }
     catch (e) {
         console.trace(e);
