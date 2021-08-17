@@ -49,7 +49,9 @@ class API {
         let url = `${this.url}/${method}`;
 
         // Execute remote call
-        let res = await fetch(url, {method: "post", body: JSON.stringify(params)});
+        let res = await fetch(url, {method: "post",
+                                    body: JSON.stringify(params),
+                                    headers: {"content-type": "application/json"}});
 
         // Validate response and return JSON 
         return res.ok ? await res.json() : Promise.reject(`${res.status} ${res.statusText}`);
