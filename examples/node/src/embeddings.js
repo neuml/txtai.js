@@ -21,7 +21,7 @@ const run = async () => {
         console.log(sprintf("%-20s %s", "Query", "Best Match"));
         console.log("-".repeat(50));
 
-        for (let query of ["feel good story", "climate change", "health", "war", "wildlife", "asia", "north america", "dishonest junk"]) {
+        for (let query of ["feel good story", "climate change", "public health story", "war", "wildlife", "asia", "lucky", "dishonest junk"]) {
             let results = await embeddings.similarity(query, data);
             let uid = results[0].id;
             console.log(sprintf("%-20s %s", query, data[uid]))
@@ -37,13 +37,13 @@ const run = async () => {
         console.log(sprintf("%-20s %s", "Query", "Best Match"));
         console.log("-".repeat(50));
 
-        for (let query of ["feel good story", "climate change", "health", "war", "wildlife", "asia", "north america", "dishonest junk"]) {
+        for (let query of ["feel good story", "climate change", "public health story", "war", "wildlife", "asia", "lucky", "dishonest junk"]) {
             let results = await embeddings.search(query, 1);
             let uid = results[0].id;
             console.log(sprintf("%-20s %s", query, data[uid]));
         }
 
-        data[0] = "Feel good story: baby panda born"
+        data[0] = "See it: baby panda born"
 
         await embeddings.delete([5]);
         await embeddings.add([{id: 0, text: data[0]}])
