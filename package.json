@@ -1,6 +1,6 @@
 {
     "name": "txtai",
-    "version": "5.2.0",
+    "version": "5.3.0",
     "author": "NeuML",
     "description": "Build AI-powered semantic search applications in JavaScript",
     "license": "Apache-2.0",
