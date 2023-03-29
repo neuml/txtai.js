@@ -2,7 +2,7 @@
     "name": "txtai",
     "version": "5.4.0",
     "author": "NeuML",
-    "description": "Build AI-powered semantic search applications in JavaScript",
+    "description": "Semantic search and workflows in JavaScript",
     "license": "Apache-2.0",
     "keywords": ["search", "nlp", "machine-learning", "similarity"],
     "repository": "neuml/txtai.js",

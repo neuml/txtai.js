@@ -1,11 +1,11 @@
-# txtai: Build AI-powered semantic search applications in JavaScript
+# txtai: Semantic search and workflows in JavaScript
 
 [![Version](https://img.shields.io/github/release/neuml/txtai.js.svg?style=flat&color=success)](https://github.com/neuml/txtai.js/releases)
 [![GitHub Release Date](https://img.shields.io/github/release-date/neuml/txtai.js.svg?style=flat&color=blue)](https://github.com/neuml/txtai.js/releases)
 [![GitHub issues](https://img.shields.io/github/issues/neuml/txtai.js.svg?style=flat&color=success)](https://github.com/neuml/txtai.js/issues)
 [![GitHub last commit](https://img.shields.io/github/last-commit/neuml/txtai.js.svg?style=flat&color=blue)](https://github.com/neuml/txtai.js)
 
-[txtai](https://github.com/neuml/txtai) executes machine-learning workflows to transform data and build AI-powered semantic search applications.
+[txtai](https://github.com/neuml/txtai) is an open-source platform for semantic search and workflows powered by language models.
 
 This repository contains JavaScript bindings for the txtai API. Full txtai functionality is supported.
 
