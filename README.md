@@ -1,13 +1,29 @@
-# txtai: Semantic search and workflows in JavaScript
+<p align="center">
+    <img src="https://raw.githubusercontent.com/neuml/txtai/master/logo.png"/>
+</p>
 
-[![Version](https://img.shields.io/github/release/neuml/txtai.js.svg?style=flat&color=success)](https://github.com/neuml/txtai.js/releases)
-[![GitHub Release Date](https://img.shields.io/github/release-date/neuml/txtai.js.svg?style=flat&color=blue)](https://github.com/neuml/txtai.js/releases)
-[![GitHub issues](https://img.shields.io/github/issues/neuml/txtai.js.svg?style=flat&color=success)](https://github.com/neuml/txtai.js/issues)
-[![GitHub last commit](https://img.shields.io/github/last-commit/neuml/txtai.js.svg?style=flat&color=blue)](https://github.com/neuml/txtai.js)
+<p align="center">
+    <b>JavaScript client for txtai</b>
+</p>
 
-[txtai](https://github.com/neuml/txtai) is an open-source platform for semantic search and workflows powered by language models.
+<p align="center">
+    <a href="https://github.com/neuml/txtai.js/releases">
+        <img src="https://img.shields.io/github/release/neuml/txtai.js.svg?style=flat&color=success" alt="Version"/>
+    </a>
+    <a href="https://github.com/neuml/txtai.js/releases">
+        <img src="https://img.shields.io/github/release-date/neuml/txtai.js.svg?style=flat&color=blue" alt="GitHub Release Date"/>
+    </a>
+    <a href="https://github.com/neuml/txtai.js/issues">
+        <img src="https://img.shields.io/github/issues/neuml/txtai.js.svg?style=flat&color=success" alt="GitHub Issues"/>
+    </a>
+    <a href="https://github.com/neuml/txtai.js">
+        <img src="https://img.shields.io/github/last-commit/neuml/txtai.js.svg?style=flat&color=blue" alt="GitHub Last Commit"/>
+    </a>
+</p>
 
-This repository contains JavaScript bindings for the txtai API. Full txtai functionality is supported.
+[txtai](https://github.com/neuml/txtai) is an all-in-one embeddings database for semantic search, LLM orchestration and language model workflows.
+
+This repository contains JavaScript bindings for the txtai API.
 
 ## Installation
 txtai.js can be installed via npm
@@ -24,7 +40,7 @@ The examples directory has a series of examples that give an overview of txtai. 
 | [Labeling with zero-shot classification](https://github.com/neuml/txtai.js/blob/master/examples/node/src/labels.js) | Labeling with zero-shot classification |
 | [Pipelines and workflows](https://github.com/neuml/txtai.js/blob/master/examples/node/src/pipelines.js) | Pipelines and workflows |
 
-txtai.js connects to a txtai api instance. See [this link](https://github.com/neuml/txtai#api) for details on how to start a new api instance.
+txtai.js connects to a txtai api instance. See [this link](https://neuml.github.io/txtai/api/) for details on how to start a new api instance.
 
 Once an api instance is running, do the following to run the examples.
 
