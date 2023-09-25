@@ -11,10 +11,24 @@ class Embeddings extends API {
      * 
      * @param query query text
      * @param limit maximum results (defaults to 10)
+     * @param weights hybrid score weights, if applicable
+     * @param index index name, if applicable
      * @return list of {id: value, score: value}
      */
-    async search(query, limit = 10) {
-        return await this.get("search", {query: query, limit: limit}).catch(e => {
+    async search(query, limit = 10, weights = null, index = null) {
+        let params = {
+            query: query,
+            limit: limit
+        }
+
+        if (weights != null) {
+            params["weights"] = weights
+        }
+        if (index != null) {
+            params["index"] = index
+        }
+
+        return await this.get("search", params).catch(e => {
             throw(e);
         });
     }
@@ -26,10 +40,24 @@ class Embeddings extends API {
      *
      * @param queries queries text
      * @param limit maximum results (defaults to 10)
+     * @param weights hybrid score weights, if applicable
+     * @param index index name, if applicable
      * @return list of {id: value, score: value} per query
      */
-    async batchsearch(queries, limit = 10) {
-        return await this.post("batchsearch", {queries: queries, limit: limit}).catch (e => {
+    async batchsearch(queries, limit = 10, weights = null, index = null) {
+        let params = {
+            queries: queries,
+            limit: limit
+        }
+
+        if (weights != null) {
+            params["weights"] = weights
+        }
+        if (index != null) {
+            params["index"] = index
+        }
+
+        return await this.post("batchsearch", params).catch (e => {
             throw(e);
         });
     }
@@ -71,6 +99,26 @@ class Embeddings extends API {
      */
     async delete(ids) {
         return await this.post("delete", ids).catch(e => {
+            throw(e);
+        });
+    }
+
+    /**
+     * Recreates this embeddings index using config. This method only works if document content storage is enabled.
+     *
+     * @param config new config
+     * @param func optional function to prepare content for indexing
+     */
+    async reindex(config, func = null) {
+        let params = {
+            config: config,
+        }
+
+        if (func != null) {
+            params["function"] = func
+        }
+
+        await this.post("reindex", params).catch(e => {
             throw(e);
         });
     }
