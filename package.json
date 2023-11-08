@@ -1,6 +1,6 @@
 {
     "name": "txtai",
-    "version": "6.1.0",
+    "version": "6.2.0",
     "author": "NeuML",
     "description": "JavaScript client for txtai",
     "license": "Apache-2.0",
