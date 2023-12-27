@@ -9,11 +9,15 @@ class API {
     /**
      * Creates an API instance.
      * 
-     * @param url base url
+     * @param url api url
+     * @param token api token
      */
-    constructor(url) {
-        // Base url
-        this.url = url;
+    constructor(url, token) {
+        // API url
+        this.url = url ? url : process.env.TXTAI_API_URL
+
+        // API token
+        this.token = token ? token : process.env.TXTAI_API_TOKEN
     }
 
     /**
@@ -31,7 +35,7 @@ class API {
         }
 
         // Execute remote call
-        let res = await fetch(url);
+        let res = await fetch(url, {headers: this.headers()});
 
         // Validate response and return JSON 
         return res.ok ? await res.json() : Promise.reject(`${res.status} ${res.statusText}`);
@@ -48,13 +52,31 @@ class API {
         // Build URL
         let url = `${this.url}/${method}`;
 
+        // Default headers
+        let defaults = {"Content-Type": "application/json"};
+
         // Execute remote call
         let res = await fetch(url, {method: "post",
                                     body: JSON.stringify(params),
-                                    headers: {"content-type": "application/json"}});
+                                    headers: this.headers(defaults)});
 
         // Validate response and return JSON 
         return res.ok ? await res.json() : Promise.reject(`${res.status} ${res.statusText}`);
+    }
+
+    /**
+     * Creates default HTTP headers.
+     *
+     * @param base base headers
+     * @return headers
+     */
+    headers(base) {
+        let headers = base ? base : {};
+        if (this.token) {
+            headers["Authorization"] = "Bearer " + this.token;
+        }
+
+        return headers
     }
 }
 
