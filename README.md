@@ -21,7 +21,7 @@
     </a>
 </p>
 
-[txtai](https://github.com/neuml/txtai) is an all-in-one embeddings database for semantic search, LLM orchestration and language model workflows.
+[txtai](https://github.com/neuml/txtai) is an all-in-one AI framework for semantic search, LLM orchestration and language model workflows.
 
 This repository contains JavaScript bindings for the txtai API.
 
