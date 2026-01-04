@@ -43,7 +43,7 @@ class API {
 
     /**
      * Executes a post request.
-     * 
+     *
      * @param method api method
      * @param params post parameters
      * @return response
@@ -60,8 +60,28 @@ class API {
                                     body: JSON.stringify(params),
                                     headers: this.headers(defaults)});
 
-        // Validate response and return JSON 
+        // Validate response and return JSON
         return res.ok ? await res.json() : Promise.reject(`${res.status} ${res.statusText}`);
+    }
+
+    /**
+     * Executes a multipart form post request.
+     *
+     * @param method api method
+     * @param formData FormData object
+     * @return response
+     */
+    async postForm(method, formData) {
+        // Build URL
+        let url = `${this.url}/${method}`;
+
+        // Execute remote call (no Content-Type header - browser sets it with boundary)
+        let res = await fetch(url, {method: "post",
+                                    body: formData,
+                                    headers: this.headers()});
+
+        // Validate response
+        return res.ok ? Promise.resolve() : Promise.reject(`${res.status} ${res.statusText}`);
     }
 
     /**

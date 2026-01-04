@@ -187,6 +187,64 @@ class Embeddings extends API {
             throw(e);
         });
     }
+
+    /**
+     * Adds a batch of binary objects for indexing.
+     *
+     * @param data list of binary data (Blob, File, or Buffer objects)
+     * @param uid list of corresponding ids (optional)
+     * @param field optional object field name
+     */
+    async addobject(data, uid = null, field = null) {
+        let formData = new FormData();
+
+        for (let i = 0; i < data.length; i++) {
+            formData.append("data", data[i], `file${i}`);
+        }
+
+        if (uid != null) {
+            for (let id of uid) {
+                formData.append("uid", id);
+            }
+        }
+
+        if (field != null) {
+            formData.append("field", field);
+        }
+
+        await this.postForm("addobject", formData).catch(e => {
+            throw(e);
+        });
+    }
+
+    /**
+     * Adds a batch of images for indexing.
+     *
+     * @param data list of image data (Blob, File, or Buffer objects)
+     * @param uid list of corresponding ids
+     * @param field optional object field name
+     */
+    async addimage(data, uid, field = null) {
+        let formData = new FormData();
+
+        for (let i = 0; i < data.length; i++) {
+            formData.append("data", data[i], data[i].name || `image${i}`);
+        }
+
+        if (uid != null) {
+            for (let id of uid) {
+                formData.append("uid", id);
+            }
+        }
+
+        if (field != null) {
+            formData.append("field", field);
+        }
+
+        await this.postForm("addimage", formData).catch(e => {
+            throw(e);
+        });
+    }
 }
 
 export default Embeddings;
