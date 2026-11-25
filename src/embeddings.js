@@ -199,7 +199,8 @@ class Embeddings extends API {
         let formData = new FormData();
 
         for (let i = 0; i < data.length; i++) {
-            formData.append("data", data[i], `file${i}`);
+            const file = data[i] instanceof Uint8Array ? new Blob([data[i]]) : data[i];
+            formData.append("data", file, `file${i}`);
         }
 
         if (uid != null) {
@@ -228,7 +229,8 @@ class Embeddings extends API {
         let formData = new FormData();
 
         for (let i = 0; i < data.length; i++) {
-            formData.append("data", data[i], data[i].name || `image${i}`);
+            const file = data[i] instanceof Uint8Array ? new Blob([data[i]]) : data[i];
+            formData.append("data", file, file.name || `image${i}`);
         }
 
         if (uid != null) {
